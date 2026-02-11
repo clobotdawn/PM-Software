@@ -1,0 +1,31 @@
+.template-create-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: var(--spacing-2xl) 0;
+}
+
+.template-create-header {
+    margin-bottom: var(--spacing-xl);
+}
+
+.template-create-header h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: white;
+    margin-bottom: var(--spacing-xs);
+}
+
+.template-create-form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-lg);
+}
+
+.alert-info {
+    background-color: var(--primary-50);
+    border: 1px solid var(--primary-200);
+    color: var(--primary-800);
+    padding: var(--spacing-md);
+    border-radius: var(--radius-md);
+    font-size: 0.9rem;
+}

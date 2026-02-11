@@ -1,0 +1,545 @@
+/* Global Layout */
+.project-detail-wrapper {
+    background-color: #f9fafb;
+    min-height: 100vh;
+    padding: 2rem 1rem;
+}
+
+.project-detail-container {
+    max-width: 98%;
+    margin: 0 auto;
+}
+
+/* Header Section */
+.project-header {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
+    border: 1px solid #e5e7eb;
+}
+
+.project-title-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 1.5rem;
+}
+
+.project-title-section h1 {
+    font-size: 1.875rem;
+    font-weight: 700;
+    color: #111827;
+    margin: 0 0 0.5rem 0;
+}
+
+.project-dates {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #6b7280;
+    font-size: 0.875rem;
+}
+
+.project-status-badge {
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    text-transform: capitalize;
+}
+
+.project-status-badge.active,
+.project-status-badge.in_progress {
+    background-color: #dbeafe;
+    color: #1e40af;
+}
+
+.project-status-badge.completed,
+.project-status-badge.approved {
+    background-color: #d1fae5;
+    color: #065f46;
+}
+
+.project-status-badge.draft,
+.project-status-badge.pending {
+    background-color: #f3f4f6;
+    color: #374151;
+}
+
+.project-status-badge.review {
+    background-color: #ede9fe;
+    color: #5b21b6;
+}
+
+.project-status-badge.rejected {
+    background-color: #fee2e2;
+    color: #991b1b;
+}
+
+.project-meta-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+    padding-top: 1rem;
+    border-top: 1px solid #f3f4f6;
+}
+
+.meta-item label {
+    display: block;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #6b7280;
+    text-transform: uppercase;
+    margin-bottom: 0.25rem;
+}
+
+.meta-item span {
+    font-size: 1rem;
+    color: #374151;
+    font-weight: 500;
+}
+
+/* Roadmap / Gantt Layout */
+.roadmap-container {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    border: 1px solid #e5e7eb;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+/* --- NEW: Global Expand/Collapse Toolbar --- */
+.gantt-toolbar {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem 1rem;
+    background-color: #ffffff;
+    /* White bg for contrast */
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.toolbar-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.4rem 0.8rem;
+    background-color: #f3f4f6;
+    border: 1px solid #e5e7eb;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    color: #374151;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.toolbar-btn:hover {
+    background-color: #e5e7eb;
+    color: #111827;
+}
+
+/* Roadmap Header (Timeline Header) */
+.roadmap-header-container {
+    display: flex;
+    border-bottom: 1px solid #d1d5db;
+    /* Darker border for separation */
+    background-color: #f3f4f6;
+    /* Slightly darker header bg */
+    position: sticky;
+    top: 0;
+    z-index: 30;
+}
+
+.task-list-header {
+    width: 25%;
+    padding: 1rem;
+    font-weight: 700;
+    /* Bold */
+    color: #111827;
+    /* Darker text */
+    border-right: 1px solid #d1d5db;
+    background-color: #f3f4f6;
+    display: flex;
+    align-items: center;
+}
+
+.time-grid-header {
+    width: 75%;
+    position: relative;
+    height: 50px;
+    background-color: #f3f4f6;
+    overflow: hidden;
+}
+
+/* Auto-Scaling Grid (Flexbox) */
+.header-months-row {
+    height: 100%;
+    display: flex;
+    width: 100%;
+}
+
+.header-month-cell {
+    flex: 1;
+    /* Auto expand */
+    border-right: 1px solid #d1d5db;
+    /* Visible separator */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75rem;
+    font-weight: 700;
+    /* Bold text */
+    color: #1f2937;
+    /* Dark gray text (CONTRAST FIX) */
+    background-color: #f3f4f6;
+    position: relative;
+}
+
+.month-label {
+    margin-bottom: 4px;
+}
+
+.month-subtext {
+    font-size: 0.65rem;
+    color: #4b5563;
+    /* Darker subtext */
+    font-weight: 500;
+}
+
+/* Phase Sections */
+.phase-roadmap-section {
+    border-bottom: 1px solid #f3f4f6;
+}
+
+.phase-roadmap-header {
+    display: flex;
+    background-color: #f8fafc;
+    cursor: pointer;
+    border-bottom: 1px solid #e5e7eb;
+    transition: background 0.15s;
+    position: relative;
+}
+
+.phase-roadmap-header:hover {
+    background-color: #f1f5f9;
+}
+
+.phase-header-left {
+    width: 25%;
+    padding: 0.75rem 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    border-right: 1px solid #e5e7eb;
+    position: relative;
+    overflow: hidden;
+}
+
+.phase-header-left h3 {
+    margin: 0;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #1e293b;
+    flex: 1;
+}
+
+/* Inline Edit Actions */
+.inline-actions {
+    display: flex;
+    gap: 4px;
+    opacity: 0;
+    transition: opacity 0.2s ease-in-out;
+}
+
+.phase-roadmap-header:hover .inline-actions,
+.task-item:hover .inline-actions {
+    opacity: 1;
+}
+
+.action-btn {
+    padding: 4px;
+    border-radius: 4px;
+    color: #6b7280;
+    cursor: pointer;
+    background: transparent;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.action-btn:hover {
+    background-color: #e5e7eb;
+    color: #111827;
+}
+
+/* Right Side - Phase Summary or Grid */
+.phase-header-right {
+    width: 75%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 0 1rem;
+}
+
+/* Collapsed Phase Summary */
+.phase-summary-widget {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    height: 100%;
+}
+
+.summary-metrics {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex: 1;
+}
+
+.summary-progress-bar {
+    flex: 1;
+    height: 8px;
+    background-color: #e2e8f0;
+    border-radius: 9999px;
+    overflow: hidden;
+    max-width: 200px;
+}
+
+.summary-progress-fill {
+    height: 100%;
+    background-color: #10b981;
+    border-radius: 9999px;
+    transition: width 0.5s ease;
+}
+
+.summary-badge {
+    font-size: 0.75rem;
+    color: #64748b;
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+/* Split View Body */
+.phase-body {
+    display: flex;
+}
+
+.task-list-panel {
+    width: 25%;
+    border-right: 1px solid #e5e7eb;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+}
+
+.task-item {
+    height: 40px;
+    padding: 0 1rem 0 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #f3f4f6;
+    transition: background 0.1s;
+}
+
+.task-item:hover {
+    background-color: #f9fafb;
+}
+
+.task-name-group {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    overflow: hidden;
+    flex: 1;
+}
+
+.task-name {
+    font-size: 0.85rem;
+    color: #334155;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* --- NEW: Add Task Button (Inline) --- */
+.add-task-btn-row {
+    height: 40px;
+    display: flex;
+    align-items: center;
+    padding: 0 1rem 0 2rem;
+    border-bottom: 1px solid #f3f4f6;
+    color: #9ca3af;
+    font-size: 0.85rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.add-task-btn-row:hover {
+    background-color: #f9fafb;
+    color: #3b82f6;
+    /* Blue on hover */
+}
+
+.add-icon-small {
+    margin-right: 6px;
+}
+
+/* --- NEW: Add Phase Button (Global) --- */
+.add-phase-btn-global {
+    width: 100%;
+    padding: 1rem;
+    background-color: #ffffff;
+    border-top: 1px solid #e5e7eb;
+    color: #4b5563;
+    font-weight: 600;
+    font-size: 0.95rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.add-phase-btn-global:hover {
+    background-color: #f0f9ff;
+    color: #0284c7;
+}
+
+.time-grid-panel {
+    width: 75%;
+    position: relative;
+    background-color: white;
+}
+
+/* Grid Lines & Rows */
+.grid-lines-layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.grid-line-col {
+    flex: 1;
+    border-right: 1px dashed #f1f5f9;
+    height: 100%;
+}
+
+.grid-line-col:last-child {
+    border-right: none;
+}
+
+.gantt-row {
+    height: 40px;
+    position: relative;
+    border-bottom: 1px solid #f3f4f6;
+    z-index: 10;
+}
+
+.gantt-bar {
+    position: absolute;
+    top: 10px;
+    height: 20px;
+    border-radius: 4px;
+    min-width: 4px;
+    cursor: pointer;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    transition: all 0.2s;
+}
+
+.gantt-bar:hover {
+    height: 24px;
+    top: 8px;
+    filter: brightness(0.95);
+    z-index: 20;
+}
+
+.gantt-bar.pending {
+    background-color: #94a3b8;
+}
+
+.gantt-bar.in_progress {
+    background-color: #3b82f6;
+}
+
+.gantt-bar.review {
+    background-color: #8b5cf6;
+}
+
+.gantt-bar.approved {
+    background-color: #10b981;
+}
+
+.gantt-bar.rejected {
+    background-color: #ef4444;
+}
+
+.gantt-bar:hover::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-bottom: 6px;
+    padding: 6px 10px;
+    background-color: #1f2937;
+    color: white;
+    font-size: 0.75rem;
+    border-radius: 6px;
+    white-space: nowrap;
+    z-index: 100;
+    pointer-events: none;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.expand-icon {
+    color: #94a3b8;
+    transition: transform 0.2s;
+}
+
+.expand-icon.expanded {
+    transform: rotate(180deg);
+}
+
+.task-status-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: #ccc;
+    display: inline-block;
+}
+
+.task-status-dot.approved {
+    background-color: #10b981;
+}
+
+.task-status-dot.in_progress {
+    background-color: #3b82f6;
+}
+
+.task-status-dot.review {
+    background-color: #8b5cf6;
+}
+
+.task-status-dot.pending {
+    background-color: #94a3b8;
+}
